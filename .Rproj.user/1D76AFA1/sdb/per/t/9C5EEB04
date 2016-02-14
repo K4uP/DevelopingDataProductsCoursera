@@ -1,0 +1,18 @@
+{
+    "contents" : "library(shiny)\nlibrary(ggplot2)\n\nshinyServer(\n  function(input,output)\n  {\n    #Barplot Colnames\n    barnames <- c(\"Length\", \"Breadth\", \"Height\", \"Volume\", \"Surface\")\n    \n    #Volume\n    output$oid1<-renderText({(as.numeric((input$length))*as.numeric((input$breadth))*as.numeric((input$height)))})\n    #Surface\n    output$oid2<-renderText({(as.numeric(input$length)*as.numeric(input$breadth)+\n        as.numeric(input$height)*as.numeric(input$breadth)+\n        as.numeric(input$length)*as.numeric(input$height))})\n    #Date\n    output$odate<-renderPrint({input$date})\n    #Plot\n    output$plot <- renderPlot({\n          \n          barplot(height = cbind(as.numeric(input$length),\n                                 as.numeric(input$breadth),\n                                 as.numeric(input$height),\n                                 as.numeric((input$length))*as.numeric((input$breadth))*as.numeric((input$height)),\n                                 as.numeric(input$length)*as.numeric(input$breadth)+\n                                  as.numeric(input$height)*as.numeric(input$breadth)+\n                                  as.numeric(input$length)*as.numeric(input$height)\n                                 ),\n                  width = 1, space = NULL,\n                  names.arg = barnames, legend.text = NULL, beside = FALSE,\n                  horiz = FALSE, density = NULL, angle = 45,\n                  col = NULL, border = par(\"fg\"),\n                  main = \"Cube\", sub = NULL, xlab = 'Dimensions', ylab = 'Value',\n                  xlim = NULL, ylim = NULL, xpd = TRUE, log = \"\",\n                  axes = TRUE, axisnames = TRUE,\n                  cex.axis = par(\"cex.axis\"), cex.names = par(\"cex.axis\"),\n                  inside = TRUE, plot = TRUE, axis.lty = 0, offset = 0,\n                  add = FALSE, args.legend = NULL)\n    })\n  })",
+    "created" : 1455458515713.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "976977823",
+    "id" : "9C5EEB04",
+    "lastKnownWriteTime" : 1455473924,
+    "path" : "~/GitHub/DevelopingDataProductsCoursera/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
