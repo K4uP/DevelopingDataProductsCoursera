@@ -10,7 +10,7 @@ shinyServer(
     #Volume
     output$oid1<-renderText({(as.numeric((input$length))*as.numeric((input$breadth))*as.numeric((input$height)))})
     #Surface
-    output$oid2<-renderText({(as.numeric(input$length)*as.numeric(input$breadth)+
+    output$oid2<-renderText({2*(as.numeric(input$length)*as.numeric(input$breadth)+
         as.numeric(input$height)*as.numeric(input$breadth)+
         as.numeric(input$length)*as.numeric(input$height))})
     #Date
