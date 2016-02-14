@@ -38,6 +38,8 @@ shinyUI(fluidPage(
                  about data to a mass audience.'),
               h2('Reproducible Pitch Presentation'),
               h4('My presentation is published here:'),
-              h4('....')
+              h4('http://k4up.github.io/DevelopingDataProductsCoursera/'),
+              h4('My Code can be reviewed:'),
+              h4('https://github.com/K4uP/DevelopingDataProductsCoursera')
               )
   )))))
